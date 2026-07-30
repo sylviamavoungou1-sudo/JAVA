@@ -1,3 +1,6 @@
+import java.util.ArrayList; // Nous permet d'utiliser ArrayList
+import java.util.Scanner; 
+
 public class Etudiant {
     public String nom ; 
     public String prenom;
@@ -13,11 +16,44 @@ public class Etudiant {
         public void afficher(){
             System.out.println("l'étudiant s'appelle " + nom + " " + prenom + " et il a une moyenne de " + moyenne);
         }
+
+       
     public static void main ( String[] args){
 
-         Etudiant etudiant1 = new Etudiant ("NGANDJI", "ALEX" , 18);
+        ArrayList<Etudiant> etudiants = new ArrayList<Etudiant>();
+
          
-     etudiant1.afficher();
+            Scanner saisie = new Scanner(System.in);
+            String yes = "oui";
+            String reponse ;
+
+            
+           do{ System.out.println( "Quelle est votre nom ? ");
+
+             String nom = saisie.nextLine();
+
+            System.out.println( "Quelle est votre prenom ? ");
+
+             String prenom = saisie.nextLine();
+
+
+            System.out.println( "Quelle est votre moyenne ? ");
+
+             int moyenne = saisie.nextInt();
+             saisie.nextLine();
+             
+    
+         Etudiant etudiant1 = new Etudiant (nom , prenom , moyenne);
+         
+         etudiant1.afficher();
+         etudiants.add(etudiant1);
+
+             System.out.println( "Voulez vous donner un autre étudiant ? Répondez par oui ou non ");
+            reponse = saisie.nextLine();
+    
+           } while ( reponse.equals(yes) );
+        
+      System.out.println(etudiants.size());
     }
 
 }
