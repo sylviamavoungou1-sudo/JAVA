@@ -51,6 +51,10 @@ public class Etudiant {
     
 
         }
+
+         public String getName( ){
+           return this.nom ;
+         }
        
     public static void main ( String[] args){
 
@@ -59,8 +63,9 @@ public class Etudiant {
          Scanner saisie = new Scanner(System.in);
 
          remplirtab(etudiants, saisie);
-           
-      System.out.println(etudiants.size());
+    
+         for (Etudiant e : etudiants)
+      System.out.println(e.getName());
     }
 
 }
