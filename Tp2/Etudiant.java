@@ -17,13 +17,9 @@ public class Etudiant {
             System.out.println("l'étudiant s'appelle " + nom + " " + prenom + " et il a une moyenne de " + moyenne);
         }
 
-       
-    public static void main ( String[] args){
+        public static void remplirtab( ArrayList<Etudiant> etudiants, Scanner saisie ){
 
-        ArrayList<Etudiant> etudiants = new ArrayList<Etudiant>();
 
-         
-            Scanner saisie = new Scanner(System.in);
             String yes = "oui";
             String reponse ;
 
@@ -52,7 +48,18 @@ public class Etudiant {
             reponse = saisie.nextLine();
     
            } while ( reponse.equals(yes) );
+    
+
+        }
+       
+    public static void main ( String[] args){
+
+        ArrayList<Etudiant> etudiants = new ArrayList<Etudiant>();
         
+         Scanner saisie = new Scanner(System.in);
+
+         remplirtab(etudiants, saisie);
+           
       System.out.println(etudiants.size());
     }
 
