@@ -11,11 +11,17 @@ public class DVD extends Ouvrage {
 
     @Override
 public String toString() {
-    return "DVD [id=" + get_id() + ", emprunte=" + emprunt + ", titre=" + titre_DVD+ ", duree=" + duree + "]";
+    String statut ;
+    if ( emprunt ){
+        statut = "emprunter";
+    }
+    else 
+        statut = "Disponible";
+    return "DVD { id : " + get_id() + " Titre : " + titre_DVD + " Duree : " + duree + " Statut : " + statut +  "}";
 }
 
     void affiche(){
         super.affiche();
-        System.out.println(" Les caractéristiques du DVD sont les suivantes " + titre_DVD + duree + get_id() + emprunt);
+        System.out.println(" Les caractéristiques du DVD sont les suivantes : " + " Identifiant : " + get_id() + "Titre : "+ titre_DVD + "Durée : "+ duree + "Status : " + emprunt);
     }
 }

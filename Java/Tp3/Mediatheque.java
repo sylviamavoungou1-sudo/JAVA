@@ -9,6 +9,12 @@ public class Mediatheque {
 
         Scanner scanner= new Scanner(System.in); 
 
+        System.out.println("Vous voulez saisir combien d'ouvrage ?");
+        int nb_saisie = scanner.nextInt();
+        scanner.nextLine(); 
+
+        
+
         System.out.println( "Que voulez vous rajouter un livre ou un DVD ?"); 
         String saisie = scanner.nextLine();
 
@@ -17,9 +23,17 @@ public class Mediatheque {
             int id = scanner.nextInt();
             scanner.nextLine();
 
-            System.out.println("Ce livre est t'il emprunter ? (true/false) : ");
-            boolean tf = scanner.nextBoolean(); 
-            scanner.nextLine();
+            System.out.println("Ce livre est t'il emprunter ? (oui/non) : ");
+            String tf = scanner.nextLine(); 
+            boolean emprunt = Boolean.parseBoolean(tf);
+
+            if(tf.equals("oui")){
+                emprunt = true;
+            }
+            else 
+                emprunt = false;
+
+
 
             System.out.println( "Quel est le titre du livre ? ");
             String title = scanner.nextLine(); 
@@ -27,27 +41,37 @@ public class Mediatheque {
             System.out.println("Quel est le nom du livre ?");
             String nom = scanner.nextLine();
 
-             e.add(new Livre(id , tf , title , nom ));
+             e.add(new Livre(id , emprunt , title , nom ));
              
         }
 
         else if (saisie.equals("DVD")){
 
-            System.out.println( "Quel est le numero d'identification du livre ? ");
+            System.out.println( "Quel est le numero d'identification du DVD ? ");
             int id = scanner.nextInt();
             scanner.nextLine();
 
-            System.out.println("Ce livre est t'il emprunter ? (true/false) : ");
-            boolean tf = scanner.nextBoolean(); 
+            
+            System.out.println("Ce DVD est t'il emprunter ? (oui/non) : ");
+            String tf = scanner.nextLine(); 
+            boolean ft = Boolean.parseBoolean(tf) ;
+
+            if( tf.equals("oui")){
+                 ft = true ; 
+            }
+            else {
+                 ft = false ; 
+            }
+    
 
             System.out.println( "Quel est le titre du DVD ? ");
             String title = scanner.nextLine(); 
 
-            System.out.println("Quel est le nom la duree du DVD ?");
+            System.out.println("Quel est la duree du DVD ?");
             int duree = scanner.nextInt();
             scanner.nextLine();
 
-             e.add(new DVD(id , tf , title , duree ));
+             e.add(new DVD(id , ft , title , duree ));
 
         }
         }

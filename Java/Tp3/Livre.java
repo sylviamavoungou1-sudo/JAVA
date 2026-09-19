@@ -11,11 +11,18 @@ public class Livre extends Ouvrage{
 
 	@Override
 public String toString() {
-    return "Livre [id=" + get_id() + ", emprunte=" + emprunt + ", titre=" + titre + ", auteur=" + nom + "]";
+	String statut; 
+	if(emprunt){
+		statut = "Emprunter";
+	}
+	else
+		statut = "Disponible";
+
+    return "Livre { id: " + get_id() + " Titre : "+ titre+ "  Auteur : " + nom + " Statut: " + statut + "}";
 }
 
 	void affiche(){
 		super.affiche();
-		System.out.println(" Ce livre possède les caractéristique suivante : " + titre + nom +get_id()+ emprunt);
+		System.out.println(" Ce livre possède les caractéristique suivante : " + "Id : "+ get_id() +" Titre :" + titre +"Auteur :" + nom + "Statut : "+ emprunt);
 	}
 }
