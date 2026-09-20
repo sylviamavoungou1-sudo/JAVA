@@ -17,7 +17,7 @@ public String toString() {
     }
     else 
         statut = "Disponible";
-    return "DVD { id : " + get_id() + " Titre : " + titre_DVD + " Duree : " + duree + " Statut : " + statut +  "}";
+    return "DVD { id : " + get_id() +" ,"+ " Titre : " + titre_DVD+" ," + " Duree : " + duree +" ,"+ " Statut : " + statut +  "}";
 }
 
     void affiche(){

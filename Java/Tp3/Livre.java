@@ -18,7 +18,7 @@ public String toString() {
 	else
 		statut = "Disponible";
 
-    return "Livre { id: " + get_id() + " Titre : "+ titre+ "  Auteur : " + nom + " Statut: " + statut + "}";
+    return "Livre { id: " + get_id() +" ," + " Titre : "+ titre + " , " + "Auteur : " + nom +" ,"+ " Statut: " + statut + "}";
 }
 
 	void affiche(){

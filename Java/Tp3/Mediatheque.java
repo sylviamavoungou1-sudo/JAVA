@@ -5,7 +5,7 @@ public class Mediatheque {
     ArrayList<Ouvrage> e = new ArrayList<Ouvrage>()  ;
 
 
-    public static void  ajouteOuvrage(ArrayList<Ouvrage> e){
+    public void  ajouteOuvrage(ArrayList<Ouvrage> e){
 
         Scanner scanner= new Scanner(System.in); 
 
@@ -13,7 +13,7 @@ public class Mediatheque {
         int nb_saisie = scanner.nextInt();
         scanner.nextLine(); 
 
-        
+        for (int i = 0 ; i<nb_saisie ; i++){
 
         System.out.println( "Que voulez vous rajouter un livre ou un DVD ?"); 
         String saisie = scanner.nextLine();
@@ -75,8 +75,10 @@ public class Mediatheque {
 
         }
         }
+        scanner.close();
+    }
 
-       public static  void affiche_ouvrage(ArrayList<Ouvrage> e){
+       public  void affiche_ouvrage(ArrayList<Ouvrage> e){
 
             for ( int i = 0 ; i<e.size() ; i++){
 
@@ -84,12 +86,4 @@ public class Mediatheque {
             }
         }
 
-        public static void main(String [] args){
-
-            ArrayList<Ouvrage> e = new ArrayList<Ouvrage> (); 
-
-            ajouteOuvrage(e);
-            affiche_ouvrage(e);
-        }
-    
-}
+    }       
