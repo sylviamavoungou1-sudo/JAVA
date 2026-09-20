@@ -11,7 +11,7 @@ public class Principal {
             ArrayList<Ouvrage> e = new ArrayList<Ouvrage> (); 
 
             System.out.println( "BIENVENUE DANS LE MENU "); 
-
+            System.out.println("Choisissez le numéro d'accès de votre choix");
             System.out.println(" 1. Ajouter un Ouvrage");
             System.out.println("2. Afficher les ouvrage");
 
