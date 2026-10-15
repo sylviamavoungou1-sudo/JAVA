@@ -8,29 +8,37 @@ public class Principal {
 
         Mediatheque objt = new Mediatheque();
 
-            ArrayList<Ouvrage> e = new ArrayList<Ouvrage> (); 
+                
+                Scanner scanner = new Scanner(System.in);
+                 int i ;
 
+
+            do{
             System.out.println( "BIENVENUE DANS LE MENU "); 
             System.out.println("Choisissez le numéro d'accès de votre choix");
             System.out.println(" 1. Ajouter un Ouvrage");
             System.out.println("2. Afficher les ouvrage");
+            System.out.println("3. Quitter");
 
-            Scanner scanner = new Scanner(System.in);
+             i = scanner.nextInt();
 
-            int i = scanner.nextInt();
             switch(i){
 
             case 1 :
-                  objt.ajouteOuvrage(e);
+                  objt.ajouteOuvrage();
                   break;
 
             case 2 : 
 
-             objt.affiche_ouvrage(e);
+             objt.affiche_ouvrage();
+             break;
+            case 3 :
             break;
             default :
                 System.out.println("Choix invalide");
         }
+    }while (i<3); 
+        
     
     }
 }

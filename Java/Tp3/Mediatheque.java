@@ -5,7 +5,7 @@ public class Mediatheque {
     ArrayList<Ouvrage> e = new ArrayList<Ouvrage>()  ;
 
 
-    public void  ajouteOuvrage(ArrayList<Ouvrage> e){
+    public void  ajouteOuvrage(){
 
         Scanner scanner= new Scanner(System.in); 
 
@@ -42,6 +42,7 @@ public class Mediatheque {
             String nom = scanner.nextLine();
 
              e.add(new Livre(id , emprunt , title , nom ));
+             System.out.println("Livre ajouter avec succès !");
              
         }
 
@@ -73,12 +74,14 @@ public class Mediatheque {
 
              e.add(new DVD(id , ft , title , duree ));
 
+
+             
+
         }
         }
-        scanner.close();
     }
 
-       public  void affiche_ouvrage(ArrayList<Ouvrage> e){
+       public  void affiche_ouvrage(){
 
             for ( int i = 0 ; i<e.size() ; i++){
 
