@@ -1,10 +1,11 @@
-import java.io.*;
+import java.io.File;
 
 public class Repertoire {
     public static void main(String[] args){
 
         if(args.length != 1){
             System.out.println(" Vous n'avez pas donner le répertoire");
+            System.exit(0);
         }
         File repertoire = new File(args[0]);
 
